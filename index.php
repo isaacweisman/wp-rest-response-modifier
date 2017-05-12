@@ -3,6 +3,7 @@
  * Plugin Name: REST Response Modifier
  * Description: A very simple plugin to modify the response of the wordpress REST API.
  * Author: Isaac Weisman
+ * Author URI: https://github.com/isaacweisman
  */
 
  add_action( 'rest_api_init', 'iw_add_custom_rest_fields' );
