@@ -56,6 +56,22 @@
           'schema'            => $iw_category_schema
       )
   );
+
+  $iw_category_url_schema = array(
+      'description'   => 'The post category url',
+      'type'          => 'string',
+      'context'       =>   array( 'view' )
+  );
+
+  register_rest_field(
+      'post',
+      'iw_category_url',
+      array(
+          'get_callback'      => 'iw_get_category_url',
+          'update_callback'   => null,
+          'schema'            => $iw_category_url_schema
+      )
+  );
 }
 
 function iw_get_author_name( $object, $field_name ) {
@@ -69,4 +85,9 @@ function iw_get_author_url( $object ) {
 function iw_get_category() {
   $cat = get_the_category();
   return $cat[0];
+}
+
+function iw_get_category_url() {
+  $cat = get_the_category();
+  return get_category_link( $cat[0] );
 }
